@@ -1,7 +1,5 @@
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
-// https://the-guild.dev/graphql/codegen/docs/guides/graphql-server-apollo-yoga-with-server-preset
-// この辺り参考にする
 const config: CodegenConfig = {
 	overwrite: true,
 	schema: "./schema.graphql",
@@ -9,7 +7,6 @@ const config: CodegenConfig = {
 		"__generated__/graphql/resolver-types.d.ts": {
 			plugins: ["typescript", "typescript-resolvers"],
 			config: {
-				defaultScalarType: 'unknown',
 				mapperTypeSuffix: 'Model',
 				useTypeImports: true,
 				avoidOptionals: {
@@ -20,7 +17,7 @@ const config: CodegenConfig = {
 					Book: "@graphql/types#Book",
 				},
 				scalars: {
-					DateTime: "Date"
+					DateTime: "@graphql/types#DateTime"
 				}
 			},
 		},

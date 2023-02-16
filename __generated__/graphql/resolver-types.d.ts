@@ -1,3 +1,4 @@
+import type { DateTime } from '@graphql/types';
 import type { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import type { User as UserModel, Book as BookModel } from '@graphql/types';
 import type { GraphQLContext } from '@graphql/context';
@@ -13,7 +14,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  DateTime: Date;
+  DateTime: DateTime;
 };
 
 export type Book = {
