@@ -17,8 +17,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["src/*"],
-			"@graphql/context": ["src/index.ts"],
-			"@graphql/*": ["__generated__/graphql/*"]
+			"@graphql/resolver-types": ["__generated__/graphql/resolver-types.d.ts"],
+			"@graphql/*": ["src/graphql/*"]
 		},
 		"types": ["vitest/globals"]
 	},

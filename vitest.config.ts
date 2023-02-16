@@ -8,7 +8,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"~": join(__dirname, "src/"),
-			"@graphql": join(__dirname, "__generated__/graphql/"),
+			"@graphql": join(__dirname, "src/graphql/"),
 			"schema.graphql": join(__dirname, "./schema.graphql"),
 		},
 	},

@@ -1,11 +1,11 @@
 type User {
 	name: String!
-	books: [Book!]
+	books: [Book!]!
 }
 
 type Book {
 	title: String!
-	author: User
+	author: User!
 }
 
 type Query {

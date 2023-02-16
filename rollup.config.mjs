@@ -26,7 +26,11 @@ export default defineConfig({
 			entries: [
 				{
 					find: /~/,
-					replacement: path.join(__dirname, "./src/"),
+					replacement: path.join(__dirname, "src/"),
+				},
+				{
+					find: /@graphql/,
+					replacement: path.join(__dirname, "src/graphql"),
 				},
 				{
 					find: /schema.graphql/,

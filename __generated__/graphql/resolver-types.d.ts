@@ -1,4 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
+import { UserModel, BookModel } from '@graphql/model';
 import { GraphQLContext } from '@graphql/context';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -16,7 +17,7 @@ export type Scalars = {
 
 export type Book = {
   __typename?: 'Book';
-  author?: Maybe<User>;
+  author: User;
   title: Scalars['String'];
 };
 
@@ -27,11 +28,12 @@ export type Query = {
 
 export type User = {
   __typename?: 'User';
-  books?: Maybe<Array<Book>>;
+  books: Array<Book>;
   name: Scalars['String'];
 };
 
-
+export type WithIndex<TObject> = TObject & Record<string, any>;
+export type ResolversObject<TObject> = WithIndex<TObject>;
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
 
@@ -99,42 +101,42 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 ) => TResult | Promise<TResult>;
 
 /** Mapping between all available schema types and the resolvers types */
-export type ResolversTypes = {
-  Book: ResolverTypeWrapper<Book>;
+export type ResolversTypes = ResolversObject<{
+  Book: ResolverTypeWrapper<BookModel>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  User: ResolverTypeWrapper<User>;
-};
+  User: ResolverTypeWrapper<UserModel>;
+}>;
 
 /** Mapping between all available schema types and the resolvers parents */
-export type ResolversParentTypes = {
-  Book: Book;
+export type ResolversParentTypes = ResolversObject<{
+  Book: BookModel;
   Boolean: Scalars['Boolean'];
   Query: {};
   String: Scalars['String'];
-  User: User;
-};
+  User: UserModel;
+}>;
 
-export type BookResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
-  author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+export type BookResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = ResolversObject<{
+  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
+}>;
 
-export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
   users?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
-};
+}>;
 
-export type UserResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
-  books?: Resolver<Maybe<Array<ResolversTypes['Book']>>, ParentType, ContextType>;
+export type UserResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = ResolversObject<{
+  books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
+}>;
 
-export type Resolvers<ContextType = GraphQLContext> = {
+export type Resolvers<ContextType = GraphQLContext> = ResolversObject<{
   Book?: BookResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
-};
+}>;
 
