@@ -1,7 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-import typeDefs from "../schema.graphql";
+import typeDefs from "schema.graphql";
 
 import { logger } from "./logger";
 import { resolvers } from "./resolvers";

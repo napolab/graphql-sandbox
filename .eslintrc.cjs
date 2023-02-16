@@ -3,5 +3,11 @@ module.exports = {
 	rules: {
 		"no-void": "off",
 		"no-console": "warn",
+		"no-restricted-imports": [
+			"error",
+			{
+				patterns: ["../"],
+			},
+		],
 	},
 };

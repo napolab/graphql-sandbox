@@ -29,7 +29,8 @@
 		"codegen.ts",
 		"vitest.config.ts",
 		"rollup.config.mjs",
-		"rollup.config.dev.mjs"
+		"rollup.config.dev.mjs",
+		".eslintrc.cjs"
 	],
 	"exclude": ["node_modules"]
 }

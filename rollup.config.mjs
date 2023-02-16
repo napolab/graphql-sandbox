@@ -28,6 +28,10 @@ export default defineConfig({
 					find: /~/,
 					replacement: path.join(__dirname, "./src/"),
 				},
+				{
+					find: /schema.graphql/,
+					replacement: path.join(__dirname, "schema.graphql"),
+				},
 			],
 		}),
 		esbuild(),
