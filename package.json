@@ -2,10 +2,10 @@
 	"name": "graphql-sandbox",
 	"packageManager": "yarn@3.4.1",
 	"scripts": {
-		"dev": "rollup -c rollup.config.dev.mjs --watch",
+		"dev": "NODE_ENV=development rollup -c rollup.config.dev.mjs --watch",
 		"prebuild": "rimraf dist && yarn codegen",
 		"build": "rollup -c rollup.config.mjs",
-		"start": "node dist/index.js",
+		"start": "NODE_ENV=production node dist/index.js",
 		"lint": "npm-run-all -s 'lint:*'",
 		"lint:eslint": "eslint src",
 		"lint:prettier": "prettier --check src",
@@ -14,7 +14,8 @@
 		"fmt:prettier": "prettier --write src",
 		"type-check": "tsc --noEmit",
 		"typesync": "typesync",
-		"codegen": "graphql-codegen --config codegen.ts"
+		"codegen": "graphql-codegen --config codegen.ts",
+		"test": "NODE_ENV=test vitest"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "3.0.0",
@@ -34,7 +35,9 @@
 		"rollup": "^3.15.0",
 		"rollup-plugin-esbuild": "^5.0.0",
 		"typescript": "^4.9.5",
-		"typesync": "^0.10.0"
+		"typesync": "^0.10.0",
+		"vite": "^4.1.1",
+		"vitest": "^0.28.5"
 	},
 	"dependencies": {
 		"@apollo/server": "^4.4.0",

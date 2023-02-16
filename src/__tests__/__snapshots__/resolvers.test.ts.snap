@@ -1,0 +1,30 @@
+// Vitest Snapshot v1
+
+exports[`snapshot test 1`] = `
+{
+  "body": {
+    "kind": "single",
+    "singleResult": {
+      "data": {
+        "users": [
+          {
+            "__typename": "User",
+            "name": "napo",
+          },
+          {
+            "__typename": "User",
+            "name": "napo2",
+          },
+        ],
+      },
+      "errors": undefined,
+    },
+  },
+  "http": {
+    "headers": Map {
+      "cache-control" => "no-store",
+    },
+    "status": undefined,
+  },
+}
+`;

@@ -18,8 +18,12 @@ async function main() {
 		resolvers,
 	});
 	const { url } = await startStandaloneServer(server, {
-		context: async () => ({ logger }),
-		listen: { port: 4000 },
+		context: async () => ({
+			logger,
+		}),
+		listen: {
+			port: parseInt(process.env.PORT ?? "4000"),
+		},
 	});
 
 	logger.debug(`🚀 Server ready at ${url}`);
