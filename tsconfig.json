@@ -1,23 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "ES2018",
-    "lib": ["esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"]
-    }
-  },
-  "include": ["src", "types"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "ES2018",
+		"lib": ["esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"incremental": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/*"],
+			"@graphql/*": ["__generated__/graphql/*"]
+		}
+	},
+	"include": ["src", "types", "__generated__", "codegen.ts"],
+	"exclude": ["node_modules"]
 }

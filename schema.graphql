@@ -10,5 +10,4 @@ type Book {
 
 type Query {
 	users: [User!]!
-	books: [Book!]!
 }

@@ -1,32 +1,28 @@
-import { ApolloServer } from "apollo-server";
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 
-import typeDefs from "./schema.graphql";
+import typeDefs from "../schema.graphql";
 
-import type { Resolvers } from "./generated/graphql";
+import { logger } from "./logger";
+import { resolvers } from "./resolvers";
 
-const resolvers: Resolvers = {
-	User: {
-		name(parent) {
-			return parent.name;
-		},
-		books() {
-			return [{ title: "hoge" }];
-		},
-	},
-	Query: {
-		users() {
-			return [{ name: "napo" }, { name: "napo2" }];
-		},
-		books() {
-			return [];
-		},
-	},
-};
-const server = new ApolloServer({ typeDefs, resolvers });
+import type { Logger } from "log4js";
+
+export interface GraphQLContext {
+	logger: Logger;
+}
 
 async function main() {
-	const { url } = await server.listen();
-	console.log(`🚀 Server ready at ${url}`);
+	const server = new ApolloServer<GraphQLContext>({
+		typeDefs,
+		resolvers,
+	});
+	const { url } = await startStandaloneServer(server, {
+		context: async () => ({ logger }),
+		listen: { port: 4000 },
+	});
+
+	logger.debug(`🚀 Server ready at ${url}`);
 }
 
 void main();
