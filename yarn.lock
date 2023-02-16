@@ -5348,6 +5348,7 @@ __metadata:
     prettier: ^2.8.4
     rollup: ^3.15.0
     rollup-plugin-esbuild: ^5.0.0
+    rollup-plugin-node-externals: ^5.1.2
     typescript: ^4.9.5
     typesync: ^0.10.0
     vite: ^4.1.1
@@ -7801,6 +7802,15 @@ __metadata:
     esbuild: ">=0.10.1"
     rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
   checksum: 59b2922db370918ca97ac3862bce9a37e530a8e6332c670803b211e827de6b0efb8e06d1b4eba60af7dab42a1fd38c6aaa039c6cea321f61fb363a3abdedc28a
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-node-externals@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "rollup-plugin-node-externals@npm:5.1.2"
+  peerDependencies:
+    rollup: ^2.60.0 || ^3.0.0
+  checksum: 5bad7e81994cfe072723b0a92da17aba3fb330af8ad729825f23a80b2d46b2e088a02738c51b08169ac24817ce24aecbd1849a27e70351c93f35e8f5e18ccdb6
   languageName: node
   linkType: hard
 

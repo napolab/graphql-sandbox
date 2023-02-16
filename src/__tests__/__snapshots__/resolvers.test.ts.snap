@@ -5,19 +5,26 @@ exports[`snapshot test 1`] = `
   "body": {
     "kind": "single",
     "singleResult": {
-      "data": {
-        "users": [
-          {
-            "__typename": "User",
-            "name": "napo",
+      "data": null,
+      "errors": [
+        {
+          "extensions": {
+            "code": "INTERNAL_SERVER_ERROR",
           },
-          {
-            "__typename": "User",
-            "name": "napo2",
-          },
-        ],
-      },
-      "errors": undefined,
+          "locations": [
+            {
+              "column": 11,
+              "line": 5,
+            },
+          ],
+          "message": "Cannot read properties of undefined (reading 'debug')",
+          "path": [
+            "users",
+            0,
+            "name",
+          ],
+        },
+      ],
     },
   },
   "http": {

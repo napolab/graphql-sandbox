@@ -12,6 +12,6 @@ switch (process.env.NODE_ENV) {
 		break;
 	}
 	default: {
-		logger.level = "error";
+		logger.level = "info";
 	}
 }

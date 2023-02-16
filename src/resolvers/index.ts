@@ -2,7 +2,9 @@ import type { Resolvers } from "@graphql/resolver-types";
 
 export const resolvers: Resolvers = {
 	User: {
-		name(parent) {
+		name(parent, args, context) {
+			context.logger.debug("User.name", parent.name);
+
 			return parent.name;
 		},
 		books() {

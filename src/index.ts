@@ -26,7 +26,7 @@ async function main() {
 		},
 	});
 
-	logger.debug(`🚀 Server ready at ${url}`);
+	logger.info(`🚀 Server ready at ${url}`);
 }
 
 void main();

@@ -1,5 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
-import { GraphQLContext } from '../../src/index.ts';
+import { GraphQLContext } from '@graphql/context';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };

@@ -17,10 +17,19 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["src/*"],
+			"@graphql/context": ["src/index.ts"],
 			"@graphql/*": ["__generated__/graphql/*"]
 		},
 		"types": ["vitest/globals"]
 	},
-	"include": ["src", "types", "__generated__", "codegen.ts", "vitest.config.ts"],
+	"include": [
+		"src",
+		"types",
+		"__generated__",
+		"codegen.ts",
+		"vitest.config.ts",
+		"rollup.config.mjs",
+		"rollup.config.dev.mjs"
+	],
 	"exclude": ["node_modules"]
 }

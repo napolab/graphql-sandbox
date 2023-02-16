@@ -11,7 +11,7 @@ const config: CodegenConfig = {
 		},
 	},
 	config: {
-		contextType: "../../src/index.ts#GraphQLContext",
+		contextType: "@graphql/context#GraphQLContext",
 	},
 };
 
