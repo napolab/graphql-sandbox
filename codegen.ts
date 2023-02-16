@@ -9,11 +9,19 @@ const config: CodegenConfig = {
 		"__generated__/graphql/resolver-types.d.ts": {
 			plugins: ["typescript", "typescript-resolvers"],
 			config: {
-				useIndexSignature: true,
-				mappers: {
-					User: "@graphql/model#UserModel",
-					Book: "@graphql/model#BookModel",
+				defaultScalarType: 'unknown',
+				mapperTypeSuffix: 'Model',
+				useTypeImports: true,
+				avoidOptionals: {
+					resolvers: true
 				},
+				mappers: {
+					User: "@graphql/types#User",
+					Book: "@graphql/types#Book",
+				},
+				scalars: {
+					DateTime: "Date"
+				}
 			},
 		},
 	},

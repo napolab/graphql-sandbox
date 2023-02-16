@@ -1,3 +1,5 @@
+scalar DateTime
+
 type User {
 	name: String!
 	books: [Book!]!
@@ -6,6 +8,8 @@ type User {
 type Book {
 	title: String!
 	author: User!
+
+	createdAt: DateTime!
 }
 
 type Query {

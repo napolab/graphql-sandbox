@@ -4,6 +4,8 @@ import { server } from "@graphql/server";
 
 import { logger } from "./logger";
 
+import "./plugins/rfc3339.plugin";
+
 async function main() {
 	const { url } = await startStandaloneServer(server, {
 		context: async () => ({
