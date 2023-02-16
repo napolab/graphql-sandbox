@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-    "composite": true,
+		"composite": true,
 		"target": "ES2018",
 		"lib": ["esnext"],
 		"allowJs": true,
@@ -19,7 +19,7 @@
 			"~/*": ["src/*"],
 			"@graphql/*": ["__generated__/graphql/*"]
 		},
-    "types": ["vitest/globals"]
+		"types": ["vitest/globals"]
 	},
 	"include": ["src", "types", "__generated__", "codegen.ts", "vitest.config.ts"],
 	"exclude": ["node_modules"]
